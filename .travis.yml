@@ -15,8 +15,12 @@ before_install:
   - chmod +x ./kubectl
   - sudo mv ./kubectl /usr/local/bin/kubectl
 
-
-
 install:
   - docker-compose -f udacity-c3-deployment/docker/docker-compose-build.yaml build --parallel 
 
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USER" --password-stdin
+  - docker push konartist/udacity-frontend
+  - docker push konartist/reverseproxy
+  - docker push konartist/udacity-restapi-user
+  - docker push konartist/udacity-restapi-feed
