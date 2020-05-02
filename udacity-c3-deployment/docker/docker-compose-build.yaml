@@ -1,0 +1,18 @@
+version: "3"
+services:
+ reverseproxy:
+ build:
+ context: .
+ image: konartist/reverseproxy 
+ backend_user:
+ build:
+ context: ../../udacity-c3-restapi-user
+ image: konartist/udacity-restapi-user
+ backend_feed:
+ build:
+ context: ../../udacity-c3-restapi-feed 
+ image: konartist/udacity-restapi-feed
+ frontend:
+ build:
+ context: ../../udacity-c3-frontend 
+ image: konartist/udacity-frontend:local
