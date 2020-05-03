@@ -15,7 +15,7 @@ This is what the application looks like:
 ## Contents
 - [Dependencies](#dependencies)
 - [Usage](#usage)
-- [Overview](#overwiew)
+- [Overview](#overview)
 - [Continuous Integration](#continuous-integration)
 
 
